@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Text.Encodings.Web;
 
 namespace EgyetemiSzoftverek.Helpers
 {
@@ -49,7 +50,13 @@ namespace EgyetemiSzoftverek.Helpers
                     { "data-body", body }
                 });
 
-            return new HtmlString(tag.ToString());
+            using (var writer = new System.IO.StringWriter())
+            {
+                tag.WriteTo(writer, HtmlEncoder.Default);
+                return new HtmlString(writer.ToString());
+            }
+
+
         }
     }
 }

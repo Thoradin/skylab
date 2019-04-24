@@ -16,6 +16,8 @@ namespace EgyetemiSzoftverek.Controllers
 
         public IActionResult Download() => View();
 
+        public IActionResult Contact() => View();
+
         public IActionResult DownloadErrors() => View();
 
         public IActionResult DownloadGuide() => View();
