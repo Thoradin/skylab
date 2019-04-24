@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{F537C5D9-E822-46B1-85E4-55A9F1716EE8}"
 EndProject
@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{B9B58447-9685-46CD-9816-D70A071F4EDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyetemiSzoftverek", "EgyetemiSzoftverek\EgyetemiSzoftverek.csproj", "{F44C6312-4145-430E-BD46-BB8E0A0DA2C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,8 +53,15 @@ Global
 		{B9B58447-9685-46CD-9816-D70A071F4EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9B58447-9685-46CD-9816-D70A071F4EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9B58447-9685-46CD-9816-D70A071F4EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44C6312-4145-430E-BD46-BB8E0A0DA2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44C6312-4145-430E-BD46-BB8E0A0DA2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44C6312-4145-430E-BD46-BB8E0A0DA2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44C6312-4145-430E-BD46-BB8E0A0DA2C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {609BF258-B16B-4D8F-AE14-5D1C8C565410}
 	EndGlobalSection
 EndGlobal

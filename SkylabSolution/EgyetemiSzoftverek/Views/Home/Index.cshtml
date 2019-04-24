@@ -1,0 +1,125 @@
+﻿@{
+	ViewBag.Title = "Azure Dev Tools @ BME";
+	ViewBag.MetaKeywords = "Microsoft Azure Dev Tools, Imagine, DreamSpark, MSDNAA, Microsoft, szoftver, letöltés";
+	ViewBag.MetaDescription = "Microsoft Azure Dev Tools szolgáltatás a Budapesti Műszaki és Gazdaságtudományi Egyetemen";
+}
+
+    <div class="hero-unit visible-desktop visible-tablet">
+        <h1 class="bme-color text-original">
+            Egyetemi Szoftverek @@ BME
+        </h1>
+
+        <p>
+            Erről a szerverről elindulva a
+            <strong>
+                Budapesti Műszaki és Gazdaságtudományi Egyetem Villamosmérnöki és Informatikai Karának (VIK) oktatói és hallgatói
+            </strong>
+            szoftvereket érhetnek el a Campus, Azure Dev Tools, valamint Office 365 ProPlus program keretein belül.
+        </p>
+
+        <p>
+        <p class="text-center">
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Download" asp-route-category="teacher">Letöltés Oktatóknak</a>
+            &nbsp;
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Download" asp-route-category="student">Letöltés Hallgatóknak</a>
+        </p>
+        &nbsp;
+        <small><a asp-controller="Home" asp-action="Program">Bővebben a Microsoft Azure Dev Tools programról</a></small>
+        </p>
+    </div>
+
+<div class="visible-phone">
+    <p class="text-center">
+        Erről a szerverről elindulva a
+        <strong>
+            Budapesti Műszaki és Gazdaságtudományi Egyetem minden karának oktatói és hallgatói
+        </strong>
+        szoftvereket érhetnek el a Campus, Azure Dev Tools, valamint Office 365 ProPlus program keretein belül.
+    </p>
+
+    <p class="text-center">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Download" asp-route-category="teacher">Letöltés Oktatóknak</a>
+    </p>
+    <p class="text-center">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Download" asp-route-category="student">Letöltés Hallgatóknak</a>
+    </p>
+    <p class="text-center">
+        <a asp-controller="Home" asp-action="Program">Bővebben a Microsoft Azure Dev Tools programról</a>
+    </p>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="row">
+	<div class="span8">
+		<h2>Így juthat hozzá a szoftverekhez</h2>
+
+		<ul class="unstyled">
+			<li><i class="icon-ok"></i> Ellenőrizze, hogy vonatkozik-e Önre az <a asp-controller="Home" asp-action="Licence">Egyetemi Szoftverek licenc</a>!</li>
+			<li><i class="icon-ok"></i> Olvassa el a	<a asp-controller="Home" asp-action="DownloadGuide"> letöltéssel</a> kapcsolatos útmutatót!</li>
+			<li><i class="icon-ok"></i> Kattintson a felső menüben található <a asp-controller="Home" asp-action="Download">Letöltés</a> linkre!</li>
+		</ul>
+	</div>
+
+	<div class="span4">
+		<h2>útmutatók</h2>
+
+		<ul class="unstyled">
+			<li><i class="icon-info-sign"></i> <a asp-controller="Home" asp-action="DownloadGuide" title="Segítség a letöltéshez">Letöltéshez</a></li>
+			<li><i class="icon-info-sign"></i> <a asp-controller="Home" asp-action="AdminGuide" title="Segítség rendszergazdáknak">Rendszergazdáknak</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<p>&nbsp;</p>
+
+<div class="row">
+	<div class="span8">
+		<h2>gyakori kérdések</h2>
+
+		<ul class="unstyled">
+			<li>
+				<i class="icon-question-sign"></i>
+				<a asp-controller="Home" asp-action="Faq" asp-fragment="Letoltes">
+					Mi a teendő, ha a letöltéskor kapott hibakód lehetséges okai közül egyik sem igaz rám?
+				</a>
+			</li>
+			<li>
+				<i class="icon-question-sign"></i>
+				<a asp-controller="Home" asp-action="Faq" asp-fragment="Telepites">
+					Mi a teendő, ha nem sikerül megváltozott hardverű gépen aktiválnom a Windowst?
+				</a>
+			</li>
+			<li>
+				<i class="icon-question-sign"></i>
+				<a asp-controller="Home" asp-action="Faq" asp-fragment="Telepites">
+					Mi a teendő, ha nem sikerül a második számítógépemen aktiválnom a szoftvert?
+				</a>
+			</li>
+			<li>
+				<i class="icon-question-sign"></i>
+				<a asp-controller="Home" asp-action="Faq" asp-fragment="Telepites">
+					Mi a teendő, ha aktiváláskor <em>"A termékkulcs már használatban van"</em> üzenetet kapom?
+				</a>
+			</li>
+		</ul>
+
+		<p>
+			<i class="icon-circle-arrow-right"></i> <a asp-controller="Home" asp-action="Faq">További kérdések és válaszok</a>
+		</p>
+
+		<p>
+			<i class="icon-circle-arrow-right"></i> <a asp-controller="Home" asp-action="DownloadErrors">Letöltési hibakódok magyarázata</a>
+		</p>
+	</div>
+
+	<div class="span4">
+		<h2>segítség</h2>
+
+		<p>
+			Ha további kérdése van, vegye fel a kapcsolatot a
+			<a asp-controller="Home" asp-action="Contact">program adminisztrátorokkal</a>.
+		</p>
+	</div>
+</div>

@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Letöltés";
+    ViewBag.MetaKeywords = "Microsoft Azure Dev Tools, Imagine, DreamSpark, MSDNAA, Microsoft, szoftver, letöltés";
+    ViewBag.MetaDescription = "Letölthető szoftverek az Azure Dev Tools és a Campus programban.";
+}
+
+<h1 class="page-header">Letöltés <small>mit honnan</small></h1>
+
+<form>
+    <div class="switch-field">
+        <input type="radio" id="teacher-radio" name="category-radio" value="teacher" />
+        <label for="teacher-radio">Oktatóknak</label>
+
+        <input type="radio" id="student-radio" name="category-radio" value="student" />
+        <label for="student-radio">Hallgatóknak</label>
+
+        @*<input type="radio" id="all-radio" name="category-radio" value="all" />
+        <label for="all-radio">Minden</label>*@
+    </div>
+</form>
+
+<p>
+    Mivel mind a Campus, mind pedig a Microsoft Azure Dev Tools (korábbi nevén Imagine, DreamSpark vagy MSDNAA) szerződés keretében elérhetők szoftverek, ezen az oldalon azt foglaltuk össze, hogy mit honnan érdemes letölteni.
+</p>
+
+<p>
+    <span class="label label-important">Fontos!</span><br />
+    Campus: A letöltő szerver csak egyetemi hálózatból érhető el.
+    <a href="http://net.bme.hu/sw/campus.php" target="_blank">
+        Bővebb információk a Campus licencről és a termék aktiválásról
+    </a><br />
+    Azure Dev Tools:  A programba javasolt egy dedikált @@*.bme.hu-s e-mail címmel regisztrálni<br />
+    Office 365 ProPlus: Az oldalon hallgatók számára érhető el az Office alkalmazáscsomag
+
+<p>
+
+    <table class="table table-bordered" id="download-table">
+        <tr>
+            <th>&nbsp;</th>
+            <th class="text-center"><strong>Campus</strong></th>
+            <th class="text-center"><strong>Azure Dev Tools</strong></th>
+            <th class="text-center"><strong>Office 365 ProPlus</strong></th>
+        </tr>
+        <tr>
+            <td>
+                <strong>Kliens operációs rendszerek</strong><br />
+                (Windows 7, Windows 8.1, Windows 10)
+            </td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Szerver operációs rendszerek</strong><br />
+                (Windows Server 2008, 2012, 2016)
+            </td>
+            <td>&nbsp;</td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Szerver oldali alkalmazások</strong><br />
+                (pl. Exchange Server, SQL Server, SharePoint Server, Project Server stb.)
+            </td>
+            <td>&nbsp;</td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Alap Office alkalmazások</strong><br />
+                (Word, Excel, PowerPoint, Outlook)
+            </td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>További Office alkalmazások</strong><br />
+                (pl. Access, Project, Visio, OneNote, InfoPath stb.)
+            </td>
+            <td>&nbsp;</td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Fejlesztőeszközök</strong><br />
+                (pl. Visual Studio, Team Foundation Server)
+            </td>
+            <td>&nbsp;</td>
+            <td class="text-center"><i class="icon-ok"></i></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="text-center">
+                <a href="ftp://software.eik.bme.hu" class="btn btn-primary">Letöltés</a>
+            </td>
+            <td class="text-center">
+                <a href="https://azureforeducation.microsoft.com/devtools" class="btn btn-primary">Letöltés</a>
+            </td>
+            <td class="text-center">
+                <a href="https://o365.oh.gov.hu/" class="btn btn-primary">Letöltés</a>
+            </td>
+        </tr>
+    </table>
+
+<p>
+    <i class="icon-info-sign"></i> <a asp-controller="Home" asp-action="DownloadErrorss">Letöltési hibakódok magyarázata</a>
+</p>
+
