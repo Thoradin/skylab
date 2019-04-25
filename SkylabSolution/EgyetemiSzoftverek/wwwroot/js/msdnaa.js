@@ -86,13 +86,13 @@ $(document).ready(function () {
         $('#mnuKapcsolat').addClass('active');
 
 
-    //Student/Teacher column hide for the chossen option in download page
+    //Student/Teacher column hide for the chossen option in letoltes page
     var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('category') === true && urlParams.get('category') === 'teacher') {
+    if (urlParams.has('category') === true && urlParams.get('category') === 'oktato') {
         $("#teacher-radio").prop("checked", true);
         $('td:nth-child(4),th:nth-child(4)').hide();
     }
-    else if (urlParams.has('category') === true && urlParams.get('category') === 'student') {
+    else if (urlParams.has('category') === true && urlParams.get('category') === 'hallgato') {
         $("#student-radio").prop("checked", true);
         $('td:nth-child(2),th:nth-child(2)').hide();
     }

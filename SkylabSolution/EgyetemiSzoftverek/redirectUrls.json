@@ -1,0 +1,12 @@
+{
+  "RedirectUrls": {
+    "/index.htm": "/",
+    "/hu/letoltes.htm": "/letoltes",
+    "/hu/gyik.htm": "/gyik",
+    "/hu/kapcsolatfelvetel.htm": "/kapcsolat",
+    "/hu/letoltes_hibakodok.htm": "/hibakodok",
+    "/hu/utmutato_letolteshez.htm": "/letoltesi-utmutato",
+    "/hu/licenc_feltetelek.htm": "/licenc",
+    "/hu/msdnaa_program.htm": "/azure-dev-tools"
+  }
+}

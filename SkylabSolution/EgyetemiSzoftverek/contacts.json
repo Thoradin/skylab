@@ -1,0 +1,22 @@
+{
+  "ContactInfos": [
+    {
+      "Type": "Student",
+      "Name": "Ládi Gergő",
+      "Email": "Gergo.Ladi@kszk.bme.hu"
+    },
+    {
+      "Type": "Teacher",
+      "Name": "Kardos Gergely",
+      "Email":  "asdf@asdf",
+      "Link": "https://www.aut.bme.hu/Staff/fuli",
+      "OtherInfo1": "Automatizálási és Alkalmazott Informatikai Tanszék",
+      "OtherInfo2": "Q.B.218. szoba, 463-2597"
+    },
+    {
+      "Type": "General",
+      "Name": "msdnaa@bme.hu",
+      "Link": "msdnaa@bme.hu"
+    }
+  ]
+} 

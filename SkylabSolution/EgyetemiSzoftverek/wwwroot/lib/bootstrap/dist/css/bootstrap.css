@@ -370,10 +370,10 @@ th {
 .glyphicon-road:before {
   content: "\e024";
 }
-.glyphicon-download-alt:before {
+.glyphicon-letoltes-alt:before {
   content: "\e025";
 }
-.glyphicon-download:before {
+.glyphicon-letoltes:before {
   content: "\e026";
 }
 .glyphicon-upload:before {
@@ -868,7 +868,7 @@ th {
 .glyphicon-registration-mark:before {
   content: "\e195";
 }
-.glyphicon-cloud-download:before {
+.glyphicon-cloud-letoltes:before {
   content: "\e197";
 }
 .glyphicon-cloud-upload:before {

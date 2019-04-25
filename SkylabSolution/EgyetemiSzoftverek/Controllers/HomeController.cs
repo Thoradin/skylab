@@ -1,33 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EgyetemiSzoftverek.Models;
 using Microsoft.AspNetCore.Mvc;
-using EgyetemiSzoftverek.Models;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 
 namespace EgyetemiSzoftverek.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly List<Contact> Contacts;
+
+        public HomeController(IOptions<List<Contact>> contactOptions)
+        {
+            Contacts = contactOptions.Value;
+        }
+
+        [Route("")]
         public IActionResult Index() => View();
 
-        public IActionResult AdminGuide() => View();
+        public IActionResult Rendszergazdaknak() => View("AdminGuide");
 
-        public IActionResult Download() => View();
+        public IActionResult Letoltes() => View("Download");
 
-        public IActionResult Contact() => View();
+        public IActionResult Kapcsolat() => View("Contact", Contacts);
 
-        public IActionResult DownloadErrors() => View();
+        public IActionResult Hibakodok() => View("DownloadErrors");
 
-        public IActionResult DownloadGuide() => View();
+        public IActionResult LetoltesiUtmutato() => View("DownloadGuide");
 
-        public IActionResult Faq() => View();
+        public IActionResult Gyik() => View("Faq");
 
-        public IActionResult Licence() => View();
+        public IActionResult Licenc() => View("Licence");
 
-        public IActionResult Program() => View();
+        public IActionResult AzureDevTools() => View("Program");
 
-        public IActionResult RegistrationGuide() => View();
+        public IActionResult RegisztraciosUtmutato() => View("RegistrationGuide");
     }
 }

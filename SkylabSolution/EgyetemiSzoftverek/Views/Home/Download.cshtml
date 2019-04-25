@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Letöltés";
     ViewBag.MetaKeywords = "Microsoft Azure Dev Tools, Imagine, DreamSpark, MSDNAA, Microsoft, szoftver, letöltés";
-    ViewBag.MetaDescription = "Letölthető szoftverek az Azure Dev Tools és a Campus programban.";
+    ViewBag.MetaDescription = "Letölthető szoftverek az Azure Dev Tools és a Campus azure-dev-toolsban.";
 }
 
 <h1 class="page-header">Letöltés <small>mit honnan</small></h1>
@@ -13,9 +13,6 @@
 
         <input type="radio" id="student-radio" name="category-radio" value="student" />
         <label for="student-radio">Hallgatóknak</label>
-
-        @*<input type="radio" id="all-radio" name="category-radio" value="all" />
-        <label for="all-radio">Minden</label>*@
     </div>
 </form>
 
@@ -29,12 +26,12 @@
     <a href="http://net.bme.hu/sw/campus.php" target="_blank">
         Bővebb információk a Campus licencről és a termék aktiválásról
     </a><br />
-    Azure Dev Tools:  A programba javasolt egy dedikált @@*.bme.hu-s e-mail címmel regisztrálni<br />
+    Azure Dev Tools:  A azure-dev-toolsba javasolt egy dedikált @@*.bme.hu-s e-mail címmel regisztrálni<br />
     Office 365 ProPlus: Az oldalon hallgatók számára érhető el az Office alkalmazáscsomag
 
 <p>
 
-    <table class="table table-bordered" id="download-table">
+    <table class="table table-bordered" id="letoltes-table">
         <tr>
             <th>&nbsp;</th>
             <th class="text-center"><strong>Campus</strong></th>
@@ -110,6 +107,6 @@
     </table>
 
 <p>
-    <i class="icon-info-sign"></i> <a asp-controller="Home" asp-action="DownloadErrorss">Letöltési hibakódok magyarázata</a>
+    <i class="icon-info-sign"></i> <a href="/hibakodok">Letöltési hibakódok magyarázata</a>
 </p>
 

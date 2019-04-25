@@ -1,7 +1,7 @@
 ﻿@{
 	ViewBag.Title = "Gyakran Ismétlődő Kérdések";
 	ViewBag.MetaKeywords = "GYIK, kérdések, válaszok, Microsoft Azure Dev Tools, Imagine, DreamSpark, MSDNAA, szoftver, letöltés";
-	ViewBag.MetaDescription = "Gyakran ismétlődő kérdések és válaszok a Microsoft Azure Dev Tools programmal kapcsolatban.";
+	ViewBag.MetaDescription = "Gyakran ismétlődő kérdések és válaszok a Microsoft Azure Dev Tools azure-dev-toolsmal kapcsolatban.";
 }
 
 <h1 class="page-header">Gyakran Ismétlődő Kérdések <small>avagy GYIK</small></h1>
@@ -22,17 +22,17 @@
 </p>
 <p>
 	V: A szoftverek letöltés útján érhetők el. Bővebb segítséget a
-	<a asp-controller="Home" asp-action="Index">kezdőlapon</a> található útmutatók nyújtanak.
+	<a href="/">kezdőlapon</a> található útmutatók nyújtanak.
 </p>
 
 <p class="question">
-    K: Pontosan milyen szoftvereket tartalmaz az Egyetemi Szoftverek program?
+    K: Pontosan milyen szoftvereket tartalmaz az Egyetemi Szoftverek azure-dev-tools?
 </p>
 <p>
 	V: Tartalmazza az operációs rendszereket, fejlesztő
 	környezeteket és a legfőbb szerver termékeket, valamint
 	a fejlesztéshez kapcsolódó SDK-kat, dokumentációkat és
-	néhány segédalkalmazást. Az Imagine programban nem szereplő
+	néhány segédalkalmazást. Az Imagine azure-dev-toolsban nem szereplő
 	termékek közül a legfontosabb az Office csomag és a
 	játékok hiánya.
 </p>
@@ -58,7 +58,7 @@
     tölteni (akár az Azure Dev Tools szoftverek közül, akár máshonnan
     az Internetről) vagy csak a kérdéses fájl nem megy.
     Tapasztalataink szerint a
-    <a asp-controller="Home" asp-action="DownloadErrors">hibakódok magyarázata</a>
+    <a href="/hibakodok">hibakódok magyarázata</a>
     általában helyes, tehát célszerű az ott felsorolt okokat
     még egyszer ellenőrizni. Ezen kívül célszerű a
     <a href="http://update.microsoft.com/microsoftupdate">Microsoft Update oldal</a>ról
@@ -66,7 +66,7 @@
     volt, akinek ez oldotta meg a problémát. Amennyiben a hiba
     látszólag nálunk van, a pontos szoftver konfigurációval és a
     pontos hibaüzenettel forduljon a
-    <a asp-controller="Home" asp-action="Contact">program adminisztrátor</a>hoz.
+    <a href="/kapcsolat">azure-dev-tools adminisztrátor</a>hoz.
 </p>
 
 <p class="question">
@@ -95,22 +95,22 @@
 </p>
 <p>
 	V: Kérhetnek személyesen
-	<a asp-controller="Home" asp-action="AdminGuide">Volume Licence verzió</a>t, vagy egy-két gép esetén ha nincs szükség
-	Volume Licence verzióra akkor letölthetik az általános verziót.
+	<a href="/rendszergazdaknak">Volume licenc verzió</a>t, vagy egy-két gép esetén ha nincs szükség
+	Volume licenc verzióra akkor letölthetik az általános verziót.
 </p>
 <p class="question">
 	K: Mit tegyek, ha nem találom a listában (nem tudom letölteni) azt a szoftvert, amihez hozzá szeretnék jutni?
 </p>
 <p>
-    V: Ellenőrizze, hogy ez a szoftver szerepel-e az Azure Dev Tools programban, és ha igen akkor
-    kérje a <a asp-controller="Home" asp-action="Contact">program adminisztrátor</a> segítségét.
+    V: Ellenőrizze, hogy ez a szoftver szerepel-e az Azure Dev Tools azure-dev-toolsban, és ha igen akkor
+    kérje a <a href="/kapcsolat">azure-dev-tools adminisztrátor</a> segítségét.
 </p>
 
 <p class="question">
 	K: Nem sikerült a letöltés és a hibakód magyarázata sem segített a probléma megoldásában. Mit tegyek?
 </p>
 <p>
-	V: Tapasztalataink szerint a <a asp-controller="Home" asp-action="DownloadErrors">hibakódok magyarázata</a>
+	V: Tapasztalataink szerint a <a href="/hibakodok">hibakódok magyarázata</a>
 	általában helyes, tehát célszerű az ott felsorolt okokat még egyszer ellenőrizni. Ezen kívül célszerű a
 	<a href="http://update.microsoft.com/microsoftupdate">Microsoft Update oldal</a>ról az összes operációs
 	rendszer frissítést feltelepíteni - volt, akinek ez oldotta meg a problémát.
@@ -149,8 +149,8 @@
 	K: Laborokban egyesével kell aktiválni minden gépet?
 </p>
 <p>
-	V: Természetesen nem. Erre van a <a asp-controller="Home" asp-action="AdminGuide">Volume Licenc verzió</a>, amit tanszékek kérhetnek a
-	<a asp-controller="Home" asp-action="Contact">program adminisztrátor</a>tól.
+	V: Természetesen nem. Erre van a <a href="/rendszergazdaknak">Volume Licenc verzió</a>, amit tanszékek kérhetnek a
+	<a href="/kapcsolat">azure-dev-tools adminisztrátor</a>tól.
 </p>
 
 <p class="question">
@@ -161,12 +161,12 @@
 </p>
 
 <p class="question">
-	K: Mit tegyek ha Volume Licence kulcsot akarok?
+	K: Mit tegyek ha Volume licenc kulcsot akarok?
 </p>
 <p>
 	V: Ilyen típusú kulcsot csak a tanszékek kaphatnak és
-	<a asp-controller="Home" asp-action="AdminGuide">személyesen kell kérni</a> a mindenkori
-	<a asp-controller="Home" asp-action="Contact">program adminisztrátor</a>tól.
+	<a href="/rendszergazdaknak">személyesen kell kérni</a> a mindenkori
+	<a href="/kapcsolat">azure-dev-tools adminisztrátor</a>tól.
 </p>
 
 <p class="question">
@@ -174,7 +174,7 @@
 </p>
 <p>
 	V: Ez elég nagy hiba, de azért igyekszünk megoldást találni.
-	Kérje a <a asp-controller="Home" asp-action="Contact">program adminisztrátor</a> segítségét.
+	Kérje a <a href="/kapcsolat">azure-dev-tools adminisztrátor</a> segítségét.
 </p>
 
 <p class="question">
@@ -209,7 +209,7 @@
 	szoftvert?
 </p>
 <p>
-	V: Írjon levelet a <a asp-controller="Home" asp-action="Contact">program adminisztrátornak</a> "Második aktiválás" tárggyal.
+	V: Írjon levelet a <a href="/kapcsolat">azure-dev-tools adminisztrátornak</a> "Második aktiválás" tárggyal.
 </p>
 
 
@@ -219,7 +219,7 @@
     K: Miért van külön Campus és Azure Dev Tools licenc?
 </p>
 <p>
-    V: A két program kiegészíti egymást, a Campusban
+    V: A két azure-dev-tools kiegészíti egymást, a Campusban
     például vannak Office termékek, míg az Azure Dev Toolss licenc nem
     tartalmazza ezeket.
 </p>
@@ -247,7 +247,7 @@
 <p>
     V: Az Azure Dev Tools keretében letöltött szoftverek csak
     tanulmányi vagy kutatási célokra használhatók (lásd
-    <a asp-controller="Home" asp-action="Licence">licenc</a>).
+    <a href="/licenc">licenc</a>).
 </p>
 
 <p class="question">
@@ -272,18 +272,18 @@
     otthoni gépemen?
 </p>
 <p>
-    V: A szoftverkulcs alapján tudja igazolni, hogy az Azure Dev Tools programból származik a szoftver. Problémásabb
+    V: A szoftverkulcs alapján tudja igazolni, hogy az Azure Dev Tools azure-dev-toolsból származik a szoftver. Problémásabb
     ügyekben forduljon a mindenkori
-    <a asp-controller="Home" asp-action="Contact">program adminisztrátor</a>hoz.
+    <a href="/kapcsolat">azure-dev-tools adminisztrátor</a>hoz.
 </p>
 
 <p class="question">
     K: Tartalmaz-e az Azure Dev Tools licenc
-    Windows Terminal Services licencet?
+    Windows Terminal Services licenct?
 </p>
 <p>
-    V: Az Azure Dev Tools program Windows Terminal Services
-    ügyfélhozzáférési (CAL) licenceket foglal magában.
+    V: Az Azure Dev Tools azure-dev-tools Windows Terminal Services
+    ügyfélhozzáférési (CAL) licencket foglal magában.
     Bővebb információ az
     <a href="http://msdn2.microsoft.com/en-us/subscriptions/aa948876.aspx">MSDN oldalain</a> található.
 </p>
@@ -315,7 +315,7 @@
 </p>
 <p>
     V: Az Azure Dev Tools licenc nem tartalmazza az Office
-    termékeket, azokat csak a Campus licencen keresztül
+    termékeket, azokat csak a Campus licencn keresztül
     lehet elérni. Nem tudjuk, hogy az Office melyik
     verziója és mikor lesz elérhető a Campusban.
 </p>

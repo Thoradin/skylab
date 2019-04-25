@@ -10,7 +10,8 @@
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
       "wwwroot/lib/jquery/dist/jquery.js",
-      "wwwroot/lib/bootstratp/dist/js/bootstrap.js",
+      "wwwroot/js/bootstrap-collapse.js",
+      "wwwroot/js/bootstrap-transition.js",
       "wwwroot/js/msdnaa.js"
     ],
     "minify": {

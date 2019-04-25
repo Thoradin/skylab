@@ -1120,7 +1120,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Support: IE<10
 	// Check if getElementById returns elements by name
-	// The broken getElementById methods don't pick up programmatically-set names,
+	// The broken getElementById methods don't pick up azure-dev-toolsmatically-set names,
 	// so use a roundabout getElementsByName test
 	support.getById = assert(function( el ) {
 		docElem.appendChild( el ).id = expando;
@@ -3806,7 +3806,7 @@ jQuery.extend( {
 } );
 
 
-// These usually indicate a programmer mistake during development,
+// These usually indicate a azure-dev-toolsmer mistake during development,
 // warn about them ASAP rather than swallowing them by default.
 var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
 

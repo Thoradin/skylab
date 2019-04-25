@@ -1,21 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EgyetemiSzoftverek.Helpers;
+using EgyetemiSzoftverek.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
 
 namespace EgyetemiSzoftverek
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile($"contacts.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"redirectUrls.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -31,20 +39,47 @@ namespace EgyetemiSzoftverek
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options => options.Conventions.Add(new DashedRoutingConvention()))
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //Contacts infos read from config file, for dinamycally modifications
+            services.Configure<List<Contact>>(options => Configuration.GetSection("ContactInfos").Bind(options));
+            services.Configure<Dictionary<string, string>>(options => Configuration.GetSection("RedirectUrls").Bind(options));
+
+            services.AddResponseCaching();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //For the old sites URL; redirect them to the new locations
+            app.UseMiddleware<RedirectMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithRedirects("/");
             }
+
+            app.UseResponseCaching();
+
+            app.Use(async (context, next) =>
+            {
+                //For GetTypedHeaders, add: using Microsoft.AspNetCore.Http;
+                context.Response.GetTypedHeaders().CacheControl =
+                    new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+                    {
+                        Public = true,
+                        MaxAge = TimeSpan.FromHours(1)
+                    };
+                context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
+                    new string[] { "Accept-Encoding" };
+
+                await next();
+            });
 
             app.UseStaticFiles();
             app.UseCookiePolicy();

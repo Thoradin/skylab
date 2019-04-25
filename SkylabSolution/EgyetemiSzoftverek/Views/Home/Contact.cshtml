@@ -1,39 +1,99 @@
 ﻿@using EgyetemiSzoftverek.Helpers
+@model List<Contact>
 
 @{
     ViewBag.Title = "Kapcsolatfelvétel";
     ViewBag.MetaKeywords = "kapcsolat, adminisztrátorok, Microsoft Imagine, DreamSpark, MSDNAA, szoftver, letöltés";
-    ViewBag.MetaDescription = "A program adminisztrátorok elérhetőségei.";
+    ViewBag.MetaDescription = "A azure-dev-tools adminisztrátorok elérhetőségei.";
 }
 
 <h1 class="page-header">Kapcsolatfelvétel</h1>
 
 <p>
-	<i class="icon-envelope"></i>
-	E-mail:
-    <a href=""
-	@Html.EmailLink( "msdnaa@bme.hu", "msdnaa@bme.hu" )
+    <i class="icon-envelope"></i>
+    E-mail:
+    @foreach (var item in Model.Where(x => x.Type == "General"))
+    {
+        @Html.EmailLink(item.Name, item.Link);
+        <br />
+    }
 </p>
 
 
 <div class="row-fluid content-container">
-	<div class="span6 text-center content-box">
+    <div class="span6 text-center content-box">
         <p>
             <strong>Hallgatói kérdések</strong>
         </p>
         <p>
-            Ládi Gergő - @Html.EmailLink( "Gergo.Ladi@kszk.bme.hu", "Gergo.Ladi@kszk.bme.hu" )
+            @foreach (var item in Model.Where(x => x.Type == "Student"))
+            {
+                if (item.Link != null)
+                {
+                <a href="@(item.Link ?? "")" target="_blank">@(item.Name ?? "")</a>
+                }
+                else
+                {
+                    @(item.Name??"")
+                }
+
+                if (item.Email != null)
+                {
+                    <span> - </span>
+                    @Html.EmailLink(item.Email, item.Email);
+                }
+
+                <br />
+
+                if (item.OtherInfo1 != null)
+                {
+                    @item.OtherInfo1
+                    <br />
+                }
+                if (item.OtherInfo2 != null)
+                {
+                    @item.OtherInfo2
+                    <br />
+                }
+            }
         </p>
     </div>
-	<div class="span6 text-center content-box content-box-primary">
-		<p>
-			<strong>Oktatói kérdések</strong>
-		</p>
-		<p>
-			<a href="http://www.aut.bme.hu/Staff/fuli" target="_blank">Kardos Gergely</a><br />
-			Automatizálási és Alkalmazott Informatikai Tanszék<br />
-			Q.B.218. szoba, 463-2597
-		</p>
-	</div>
-</div>	
+    <div class="span6 text-center content-box content-box-primary">
+        <p>
+            <strong>Oktatói kérdések</strong>
+        </p>
+        <p>
+            @foreach (var item in Model.Where(x => x.Type == "Teacher"))
+            {
+                if (item.Link != null)
+                {
+                    <a href="@(item.Link ?? "")" target="_blank">@(item.Name ?? "")</a>
+                }
+                else
+                {
+                    @(item.Name ?? "")
+                }
+
+                if (item.Email != null)
+                {
+                    <span> - </span>
+                    @Html.EmailLink(item.Email, item.Email);
+                }
+
+                <br />
+
+                if (item.OtherInfo1 != null)
+                {
+                    @item.OtherInfo1
+                    <br />
+                }
+                if (item.OtherInfo2 != null)
+                {
+                    @item.OtherInfo2
+                    <br />
+                }
+            }
+        </p>
+    </div>
+</div>
 
