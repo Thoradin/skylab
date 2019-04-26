@@ -1,10 +1,12 @@
-﻿using EgyetemiSzoftverek.Models;
+﻿using EgyetemiSzoftverek.Helpers;
+using EgyetemiSzoftverek.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 
 namespace EgyetemiSzoftverek.Controllers
 {
+    [ServerCache]
     public class HomeController : Controller
     {
         private readonly List<Contact> Contacts;

@@ -42,11 +42,13 @@ namespace EgyetemiSzoftverek
             services.AddMvc(options => options.Conventions.Add(new DashedRoutingConvention()))
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddMemoryCache();
+
             //Contacts infos read from config file, for dinamycally modifications
             services.Configure<List<Contact>>(options => Configuration.GetSection("ContactInfos").Bind(options));
             services.Configure<Dictionary<string, string>>(options => Configuration.GetSection("RedirectUrls").Bind(options));
 
-            services.AddResponseCaching();
+            //services.AddResponseCaching();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,25 +66,24 @@ namespace EgyetemiSzoftverek
                 app.UseStatusCodePagesWithRedirects("/");
             }
 
-            app.UseResponseCaching();
-
-            app.Use(async (context, next) =>
-            {
-                //For GetTypedHeaders, add: using Microsoft.AspNetCore.Http;
-                context.Response.GetTypedHeaders().CacheControl =
-                    new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
-                    {
-                        Public = true,
-                        MaxAge = TimeSpan.FromHours(1)
-                    };
-                context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
-                    new string[] { "Accept-Encoding" };
-
-                await next();
-            });
-
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+
+            app.UseETagger();
+            //app.UseResponseCaching();
+            //app.Use(async (context, next) =>
+            //{
+            //    //For GetTypedHeaders, add: using Microsoft.AspNetCore.Http;
+            //    context.Response.GetTypedHeaders().CacheControl =
+            //        new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+            //        {
+            //            Public = true,
+            //            MaxAge = TimeSpan.FromHours(1)
+            //        };
+            //    context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
+            //        new string[] { "Accept-Encoding" };
+
+            //    await next();
+            //});
 
             app.UseMvc(routes =>
             {
